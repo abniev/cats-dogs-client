@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 function AnimalDetails() {
   const [currentAnimal, setCurrentAnimal] = useState(null);
   const { animal, animalId } = useParams();
-  const { cats, dogs } = useContext(AnimalsContext);
+  const { cats, dogs, handleDeleteAnimal } = useContext(AnimalsContext);
 
   useEffect(() => {
     dogs &&
@@ -37,6 +37,12 @@ function AnimalDetails() {
                 Breed: {currentAnimal.breed}
               </small>
             </p>
+            <button
+              onClick={() => handleDeleteAnimal(animal, currentAnimal.id)}
+              className="btn btn-danger"
+            >
+              Delete
+            </button>
           </div>
         </div>
       ) : (
