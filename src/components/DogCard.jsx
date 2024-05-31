@@ -4,9 +4,10 @@ function DogCard({ dog }) {
   return (
     <div key={dog.id} className="card text-center" style={{ width: "18rem" }}>
       <img
-        src="https://media.cnn.com/api/v1/images/stellar/prod/230412095218-02-shortest-dog.jpg?c=16x9&q=h_833,w_1480,c_fill"
+        src={dog.image}
         className="card-img-top"
         alt="dogImage"
+        style={{ height: "25vh", objectFit: "cover" }}
       />
       <Link to={`/dogs/${dog.id}`}>
         <div className="card-body">

@@ -8,6 +8,7 @@ import DogList from "./pages/DogList";
 import AnimalDetails from "./pages/AnimalDetails";
 import NotFound from "./pages/NotFound";
 import { Toaster } from "react-hot-toast";
+import EditAnimal from "./pages/EditAnimal";
 function App() {
   return (
     <div className="app">
@@ -19,6 +20,7 @@ function App() {
         <Route path="/cats" element={<CatList />} />
         <Route path="/dogs" element={<DogList />} />
         <Route path="/:animal/:animalId" element={<AnimalDetails />} />
+        <Route path="/edit/:animal/:animalId" element={<EditAnimal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

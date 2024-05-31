@@ -20,13 +20,13 @@ function AddCatForm() {
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#catFormModal"
       >
         Add a cat to the list! 😺
       </button>
       <div
         className="modal fade"
-        id="exampleModal"
+        id="catFormModal"
         tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
@@ -40,7 +40,10 @@ function AddCatForm() {
               </h5>
             </div>
             <div className="modal-body">
-              <form onSubmit={(e) => handleAddCat(e, newCat)} id="catForm">
+              <form
+                onSubmit={(e) => handleAddCat(e, newCat, setNewCat)}
+                id="catForm"
+              >
                 <label>Name</label>
                 <input
                   name="name"
@@ -87,12 +90,7 @@ function AddCatForm() {
               >
                 Close
               </button>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                // data-bs-dismiss="modal"
-                form="catForm"
-              >
+              <button type="submit" className="btn btn-primary" form="catForm">
                 Save changes
               </button>
             </div>

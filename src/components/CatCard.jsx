@@ -3,9 +3,10 @@ function CatCard({ cat }) {
   return (
     <div key={cat.id} className="card text-center" style={{ width: "18rem" }}>
       <img
-        src="https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg"
+        src={cat.image}
         className="card-img-top"
         alt="catImage"
+        style={{ height: "25vh", objectFit: "cover" }}
       />
       <Link to={`/cats/${cat.id}`}>
         <div className="card-body">
